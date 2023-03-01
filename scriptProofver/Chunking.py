@@ -7,7 +7,7 @@ import json
 from tqdm import tqdm
 
 tagger = SequenceTagger.load("flair/chunk-english")
-f = open("paper_dev.jsonl").readlines()#f = open("< path to fever file>.jsonl").readlines()
+f = open("paper_dev.jsonl").readlines()# f = open("< path to fever file>.jsonl").readlines()
 
 mutDict = list()
 for item in tqdm(f):
@@ -22,8 +22,8 @@ for item in tqdm(mutDict):
     aList = list()
     for entity in sentence.get_spans("np"): # or try get_spans("np")
         _Dict = dict()
-        _Dict["startPos"] = entity.start_position
-        _Dict["endPos"] = entity.end_position
+        _Dict["startPos"] = entity.start_position #* start_pos
+        _Dict["endPos"] = entity.end_position #* end_pos
         _Dict["tokLists"] = [item.text for item in entity.tokens]
         _Dict["text"] = entity.text
         
