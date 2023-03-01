@@ -79,6 +79,6 @@ for item in tqdm(devDict):
         alignedList.append(alginments)
     alignedDict[item] = alignedList
     
-    
-    
+
+print(alignedDict) 
     
